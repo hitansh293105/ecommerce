@@ -1,6 +1,6 @@
 import { Router, Routes,Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './component/navbar'
+
 import Product from './component/Product'
 import Home from './Pages/Home'
 import About from './Pages/About'
@@ -12,8 +12,9 @@ import Otp from './component/auth/Otp'
 import Password  from './component/auth/Password'
 import PublicRoute from './PublicRoute'
 import Cart from './Pages/Cart'
-import Checkout from './Pages/checkout'
+import Checkout from './Pages/Checkout'
 import ProtectedRoute from './ProtectedRoute'
+import Navbar from './component/Navbar'
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
 
   return (
              <div>
-             <Navbar />
+             <Navbar/>
              <Routes>
               <Route path="/home" element = {<Home/>}/>
               <Route path="/product" element = {<Product/>}/>
