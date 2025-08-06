@@ -17,7 +17,7 @@ const Product = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.post(`https://decode007-1.onrender.com/api/getAll?${searchParams.toString()}`);
-        
+      
         console.log(response);
         console.log(response.data);
         setProduct(response.data.content);
