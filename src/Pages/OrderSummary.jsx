@@ -9,7 +9,7 @@ const OrderSummary = () => {
     console.log(selected);
 
   return (
-    <div className='flex flex-wrap space-y-4 mb-6 mt-20'>
+    <div className='flex flex-wrap space-y-4 mb-6 '>
 
         <div className='shadow-md shadow-gray-200  p-1.5 w-full sm:w-[80%] md:w-[60%] lg:w-[50%]'>
             <h1 className='text-black font-lg font-bold  '>Billing Address</h1>

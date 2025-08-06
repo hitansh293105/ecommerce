@@ -82,7 +82,7 @@ const Checkout = () => {
 
    return(
         
-       <div className='mx-auto w-1/2'>
+       <div className='mx-auto w-1/2 mt-20'>
 
              <div className='flex '>
 
