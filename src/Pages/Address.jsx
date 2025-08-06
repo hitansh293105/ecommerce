@@ -65,7 +65,7 @@ const Address = () => {
 
 
   return (
-    <div className='flex justify-center  mb-10'>
+    <div className='flex justify-center  mb-10 mt-20'>
 
       <form  onSubmit={handleSubmit(formSubmit)}className='flex flex-col shadow-md shadow-gray-500 max-w-sm w-full space-y-3 p-6'>
 
