@@ -12,9 +12,9 @@ const Menu = () => {
      
   return (
    
-    <div className=' bg-gray-100 '>
+    <div className=' bg-gray-100 mt-20 w-full'>
 
-        <ul className='flex flex-col items-center space-y-2 pr-4 mt-1 text-[13px] font-semibold'>
+        <ul className='flex flex-col items-center space-y-2 pr-4 mt-1 text-[13px] font-semibold w-full'>
             <Link to = "/home"><li className='hover:text-blue-600'>Home</li></Link>
             <Link to="/product"><li className='hover:text-blue-600'>Product</li></Link>
             <Link to="/about"><li className='hover:text-blue-600'>About</li></Link>

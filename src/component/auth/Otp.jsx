@@ -106,7 +106,7 @@ const Otp = () => {
       console.log(iscomplete);
        try{
 
-      const response = await axios.get("http://localhost:8080/api/user/verify/code",{
+      const response = await axios.get("/api/user/verify/code",{
         params:{
           email:email,
           otp:iscomplete

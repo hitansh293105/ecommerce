@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux';
 import { addAddress } from '../store/storeDetailsReducer';
@@ -8,10 +8,13 @@ import { useNavigate } from 'react-router-dom';
 
 
 
+
 const Address = () => {
 
   const navigate = useNavigate();
   const token = useSelector((state) => state.auth.auth.jwtToken)
+  const[loading,setLoading] = useState(false);
+ 
 
   const{
      register,
@@ -23,7 +26,8 @@ const Address = () => {
   const dispatch = useDispatch();
 
   const formSubmit = async (data) => {
-      
+        
+       setLoading(true);
        console.log(data)
 
        console.log(token);
@@ -48,25 +52,26 @@ const Address = () => {
      withCredentials: true}
     )
 
-     debugger
+   
 
         console.log(response);
        console.log(response.data);
 
-       debugger
-
+      
        dispatch(addAddress({...response.data}));
 
-       debugger
 
        reset()
+       setLoading(false);
+
+    
       
   }
 
 
 
   return (
-    <div className='flex justify-center  mb-10 '>
+    <div className='flex justify-center  mb-10' >
 
       <form  onSubmit={handleSubmit(formSubmit)}className='flex flex-col shadow-md shadow-gray-500 max-w-sm w-full space-y-3 p-6'>
 
@@ -129,7 +134,7 @@ const Address = () => {
         <input className='border-1 px-3 py-2 rounded shadow-md shadow-gray-300  w-full text-[14px]' 
                type="text" 
                placeholder='PostalCode'
-              {...register('postalcode',{required:'PostalCode is required'})}
+              {...register('postalcode',{required:'PostalCode is required',valueAsNumber: true})}
                />
 
                 {errors.postalcode && <p className='text-red-600 text-[13px] mt-1'>{errors.postalcode.message}</p>} 
@@ -138,7 +143,7 @@ const Address = () => {
 
               
 
-        <button className='bg-blue-500 text-white px-2 py-3 rounded-lg hover:bg-blue-600'>Submit</button>
+        <button disabled={loading} className={`bg-blue-500 text-white px-2 py-3 rounded-lg hover:bg-blue-600 ${loading ? 'cursor-not-allowed' : ''}`}>{!loading ? 'Submit' : 'Submititng'}</button>
 
       </form>
       

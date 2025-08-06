@@ -84,7 +84,7 @@ const Checkout = () => {
         
        <div className='mx-auto w-1/2 mt-29'>
 
-             <div className='flex '>
+             <div className='flex ml-20  '>
 
             {steps.map((value,index)=>(  
 
