@@ -22,7 +22,7 @@ const Password = () => {
 
         setLoading(true);
 
-        const response = await axios.post("http://localhost:8080/api/user/change/password",{
+        const response = await axios.post("https://decode007-1.onrender.com/api/user/change/password",{
             username:email,
             password:data.password
         })

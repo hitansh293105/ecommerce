@@ -23,7 +23,7 @@ const SignUp = () => {
           
      try{
 
-     const response =  await axios.post("http://localhost:8080/api/user/signUp",{
+     const response =  await axios.post("https://decode007-1.onrender.com/api/user/signUp",{
 
             name:data.name,
             email:data.email,

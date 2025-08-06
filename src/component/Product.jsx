@@ -16,7 +16,7 @@ const Product = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.post(`http://localhost:8080/api/getAll?${searchParams.toString()}`);
+        const response = await axios.post(`https://decode007-1.onrender.com/api/getAll?${searchParams.toString()}`);
         
         console.log(response);
         console.log(response.data);

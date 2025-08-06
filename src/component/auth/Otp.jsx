@@ -46,7 +46,7 @@ const Otp = () => {
 
       setSeconds(59);
        
-    const response = await axios.post("http://localhost:8080/api/user/resend/code",{
+    const response = await axios.post("https://decode007-1.onrender.com/api/user/resend/code",{
         username:email
     })
       console.log(response);

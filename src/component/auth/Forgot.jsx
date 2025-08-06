@@ -26,7 +26,7 @@ const Forgot = () => {
       console.log("hello");
 
     try{
-       const response =  await axios.post("http://localhost:8080/api/user/email",{
+       const response =  await axios.post("https://decode007-1.onrender.com/api/user/email",{
         
            username:data.email,
      })

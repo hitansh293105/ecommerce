@@ -22,7 +22,7 @@ const AddressSelection = () => {
 
   const handleRemove = async (id) =>{
 
-    const response =  axios.delete("http://localhost:8080/api/user/delete/Address",{
+    const response =  axios.delete("https://decode007-1.onrender.com/api/user/delete/Address",{
 
          params:{
             addressId:id

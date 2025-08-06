@@ -44,7 +44,7 @@ const Checkout = () => {
 
       if(step == 1){
          
-         const response = await axios.post("http://localhost:8080/api/Add/cart/product",{  
+         const response = await axios.post("https://decode007-1.onrender.com/api/Add/cart/product",{  
 
             cardItemDtoList:items
 
@@ -59,7 +59,7 @@ const Checkout = () => {
 
       if(step == 2){
 
-        const response = await axios.post(`http://localhost:8080/order/user/payment/${addressId}`,
+        const response = await axios.post(`https://decode007-1.onrender.com/order/user/payment/${addressId}`,
          
           {},
           {
