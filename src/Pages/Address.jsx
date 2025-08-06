@@ -26,10 +26,10 @@ const Address = () => {
       
        console.log(data)
 
-       
+       console.log(token);
        const response = await axios.post(
         
-      "https://decode007-1.onrender.com/api/user/create-address",
+      "https://decode007-1.onrender.com/api/user/create-address",  
       
       {
 
