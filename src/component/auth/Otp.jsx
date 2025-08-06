@@ -106,7 +106,7 @@ const Otp = () => {
       console.log(iscomplete);
        try{
 
-      const response = await axios.get("/api/user/verify/code",{
+      const response = await axios.get("https://decode007-1.onrender.com/api/user/verify/code",{
         params:{
           email:email,
           otp:iscomplete
