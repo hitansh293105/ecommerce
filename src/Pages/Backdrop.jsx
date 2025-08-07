@@ -18,7 +18,7 @@ const Backdrop = ({address,setdata,setmodal}) => {
     formState:{errors,isValid}
   } = useForm({mode:'onChange',defaultValues: address});
 
-  const handleClick = (data) =>{
+     const handleClick = () =>{
 
       
        setmodal(false)
@@ -31,7 +31,7 @@ const Backdrop = ({address,setdata,setmodal}) => {
 
     console.log(data);
 
-    const response =  await axios.put(`http://localhost:8080/api/user/update/Address/${address.id}`,{
+    const response =  await axios.put(`https://decode007-1.onrender.com/api/user/update/Address/${address.id}`,{
 
         country:data.country,
         state:data.state,
@@ -53,9 +53,9 @@ const Backdrop = ({address,setdata,setmodal}) => {
       
       setmodal(false)
       setLoader(false)
-       
-        
+
   }
+       
   return (
      <div className="fixed inset-0 backdrop-blur-xs backdrop-brightness-25  backdrop-opacity-100 flex justify-center items-center">
 
