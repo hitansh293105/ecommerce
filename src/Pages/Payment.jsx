@@ -46,7 +46,7 @@ const Payment = () => {
           console.log(response);
           dispatch(DeleteCart());
 
-          await axios.post("http://localhost:8080/order/paymentId/orderId",{},{
+          await axios.post("https://decode007-1.onrender.com/order/paymentId/orderId",{},{
             params:{
               paymentId:response. razorpay_payment_id,
               orderId:orders.order_id
