@@ -4,9 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
 import emptyCart from '../assets/empty-cart.png'
+import { useNavigate } from "react-router-dom";
 
 const HomeBanner = () => {
   const [abc, setAbc] = useState([]);
+  const navigate = useNavigate();
 
   const settings = {
     infinite: true,
@@ -20,8 +22,10 @@ const HomeBanner = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get("https://fakestoreapi.in/api/products?limit=6");
-        setAbc(response.data.products);
+        const res = await axios.get("https://fakestoreapi.com/products/category/electronics");
+
+       setAbc(res.data.slice(0, 8));
+        
       } catch (error) {
         console.error("Failed to fetch products:", error);
       }
@@ -35,7 +39,7 @@ const HomeBanner = () => {
      
         <Slider {...settings}>
  
-          {abc.map(product => (
+          {abc?.map(product => (
              <>
             <div key={product.id} className="flex justify-center items-center mt-25 bg-gradient-to-r from-[#260141] via-[#9131f2] to-[#d384e4]
  h-[300px]">
@@ -46,12 +50,12 @@ const HomeBanner = () => {
 
                 <p className=" text-white text-xl font-bold line-clamp-3">{product.title}</p>
                 <p className="text-[11px]  text-white text-semibold line-clamp-2">{product.description}</p>
-                <button className=" text-[13px] bg-gradient-to-r from-red-500 to-purple-500 text-white  py-1 rounded-lg w-[60%] md:w-[20%]">Shop now</button>
+                <button onClick={() => navigate("/product")} className=" text-[13px] bg-gradient-to-r from-red-500 to-purple-500 text-white  py-1 rounded-lg w-[60%] md:w-[20%]">Shop now</button>
 
                </div>
                 
                <div >
-               <img className="w-56 h-56 rounded-full" src={product.image}/>
+               <img className="w-56 h-56 rounded-4xl" src={product.image}/>
                </div>
                </div>
 

@@ -10,6 +10,7 @@ import { useSearchParams } from 'react-router-dom';
 const Product = () => {
 
   const [product, setProduct] = useState([]);
+  const [loading,setLoading] = useState(true)
   const[searchParams,setSearchParams] = useSearchParams({pageNo:1,pageSize:6});
   const[size,setSize] = useState(0);
 
@@ -26,6 +27,11 @@ const Product = () => {
       } catch (error) {
         console.error("Error fetching products:", error);
       }
+
+      finally{
+
+        setLoading(false);
+      }
     };
 
     fetchProducts();
@@ -35,18 +41,11 @@ const Product = () => {
   return (
     <div className=" h-screen mx-20 my-25">
 
-  
+        <Filter searchParams={searchParams} setSearchParams={setSearchParams}/>     
 
-        <Filter searchParams={searchParams} setSearchParams={setSearchParams}/>
+           <NotFound products={product} loading={loading}/>
 
-        {product.length ==0 ?(
-
-           <NotFound/>
-
-        ):
-        ( 
-        <ProductCard product={product} />  )
-      }
+        <ProductCard product={product} />  
 
       <Pagination searchParams={searchParams} setSearchParams={setSearchParams} size ={size}/>
       
