@@ -37,7 +37,7 @@ const Navbar = () => {
 
         <ul className=' hidden md:flex gap-3 text-[13px] text-black  bg-white p-4 rounded-4xl my-3'>
 
-            <li><NavLink to="/home" className={({ isActive }) => isActive
+            <li><NavLink to="/" className={({ isActive }) => isActive
           ? "text-blue-500 border-b-1 border-blue-600" : ""  }>Home</NavLink></li>
 
             <li><NavLink to="/product" className={({ isActive }) => isActive
